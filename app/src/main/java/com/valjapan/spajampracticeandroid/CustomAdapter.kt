@@ -1,0 +1,2 @@
+package com.valjapan.spajampracticeandroid
+
