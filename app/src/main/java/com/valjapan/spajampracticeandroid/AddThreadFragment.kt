@@ -32,23 +32,12 @@ class AddThreadFragment : Fragment() {
                 CoroutineScope(Dispatchers.IO).launch {
                     val api = ThreadRepository(Url.BASE_URL)
                     api.postThreads(threadRequest)
-                    testLoading()
+
                 }
             }
         }
         return view
     }
 
-    private fun testLoading() {
-        try {
-            val repository = ThreadRepository(Url.BASE_URL)
-            val response = repository.getThreads()
-            if (response.isSuccessful) {
-                // 取得成功時に発火する
-            }
-        } catch (t: Throwable) {
-
-        }
-    }
 
 }

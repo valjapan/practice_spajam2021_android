@@ -1,19 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ThreadFragment">
+    >
 
-    <!-- TODO: ここにRecyclerViewを実装する -->
+    <data>
+        <variable
+            name="viewModel"
+            type="com.valjapan.spajampracticeandroid.ThreadViewModel" />
+    </data>
 
-    <Button
-        android:id="@+id/intent_add_thread_fragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="add thread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ThreadFragment">
+
+        <!-- TODO: ここにRecyclerViewを実装する -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/thread_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/intent_add_thread_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="add thread"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
